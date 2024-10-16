@@ -1,0 +1,24 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# Temporary files
+*.tmp
+*.log
+
+# Multer uploads (optional if you don't want to keep uploaded files in the repo)
+uploads/
+
+# MacOS
+.DS_Store
+
+# IDE settings (optional)
+.vscode/
+.idea/
