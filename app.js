@@ -192,7 +192,7 @@ app.post(
 app.get(
   "/sightings",
   authToken,
-  authorizeRoles(["human", "ghost"]),
+  authorizeRoles(["human"]),
   [
     query("latitude")
       .isFloat({ min: -90, max: 90 })
@@ -243,7 +243,7 @@ app.get(
 app.get(
   "/ghost-info",
   authToken,
-  authorizeRoles(["human", "ghost"]),
+  authorizeRoles(["human"]),
   [
     query("ghost_type")
       .isString()
@@ -280,7 +280,7 @@ app.get(
   }
 );
 
-app.get("/users", authToken, authorizeRoles(["human", "ghost"]), (req, res) => {
+app.get("/users", authToken, authorizeRoles(["human"]), (req, res) => {
   res.json({
     users: [
       { username: "GhostHunter22", sightings_count: 5 },
@@ -345,7 +345,7 @@ app.get(
 app.get(
   "/ghost/favorite-haunts",
   authToken,
-  authorizeRoles(["human", "ghost"]),
+  authorizeRoles(["ghost"]),
   (req, res) => {
     res.json({
       favorite_haunts: [
